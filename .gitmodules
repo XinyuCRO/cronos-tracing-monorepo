@@ -1,0 +1,12 @@
+[submodule "ethermint"]
+	path = ethermint
+	url = git@github.com:XinyuCRO/ethermint.git
+[submodule "cronos"]
+	path = cronos
+	url = git@github.com:crypto-org-chain/cronos.git
+[submodule "tendermint"]
+	path = tendermint
+	url = git@github.com:XinyuCRO/tendermint.git
+[submodule "cosmos-sdk"]
+	path = cosmos-sdk
+	url = git@github.com:XinyuCRO/cosmos-sdk.git
