@@ -24,7 +24,10 @@ type BlockInfo struct {
 	Round int32
 }
 
-var CurrentBlockInfo *BlockInfo
+var CurrentBlockInfo *BlockInfo = &BlockInfo{
+	Height: 0,
+	Round: 0,
+}
 
 func (b *BlockInfo) ShouldRefreshInfo(height int64, round int32) (bool) {
 	if height > b.Height {
