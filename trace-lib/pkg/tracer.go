@@ -48,6 +48,11 @@ var EthermintTracer *TracerN
 var CosmosTracer *TracerN
 
 func NewEthermintTracer() (*TracerN) {
+
+	if EthermintTracer != nil {
+			return EthermintTracer
+	}
+
 	aTracer, shutdown, err := InitTracer("ethermint", "instance")
 	if err != nil {
 		log.Fatal(err)
