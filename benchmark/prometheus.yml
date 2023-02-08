@@ -7,3 +7,6 @@ scrape_configs:
   - job_name: aggregated-trace-metrics
     static_configs:
     - targets: ['otel_collector:8889']
+  - job_name: cronos-devnet
+    static_configs:
+      - targets: ['host.docker.internal:27666']

@@ -75,6 +75,23 @@ func NewCosmosTracer() (*TracerN) {
 }
 
 func NewTracer(service string, instance string) (*TracerN) {
+
+	aTracer, shutdown, err := InitTracer(service, instance)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	GlobalTracer = &TracerN{aTracer, context.Background(), shutdown}
+
+	return GlobalTracer
+}
+
+func GetOrCreateTracer(service string, instance string) (*TracerN) {
+
+	if GlobalTracer != nil {
+		return GlobalTracer
+	}
+
 	aTracer, shutdown, err := InitTracer(service, instance)
 	if err != nil {
 		log.Fatal(err)
